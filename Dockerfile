@@ -3,9 +3,9 @@ FROM ubuntu:14.04
 
 MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
 
-RUN apk update \
-    && apk upgrade \
-    && apk add --update curl ca-certificates openssl perl \
+RUN apt-get update \
+    && apt-get upgrade \
+    && apt-add --update curl ca-certificates openssl perl \
     && adduser -D -h /home/container container \
 	&& apt-get install -y \
  lib32stdc++6 \
