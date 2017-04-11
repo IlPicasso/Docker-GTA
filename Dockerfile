@@ -5,7 +5,7 @@ MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
 
 RUN apt-get update \
     && apt-get upgrade \
-    && apt-add --update curl ca-certificates openssl perl \
+    && apt-get install -y curl ca-certificates openssl perl \
     && adduser -D -h /home/container container \
 	&& apt-get install -y \
  lib32stdc++6 \
