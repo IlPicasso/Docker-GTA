@@ -1,4 +1,5 @@
 # Dockerfile for TS3 on Pterodactyl Panel
+FROM ubuntu:14.04 
 
 MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
 
