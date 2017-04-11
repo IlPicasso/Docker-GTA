@@ -1,17 +1,21 @@
 # Dockerfile for TS3 on Pterodactyl Panel
-FROM frolvlad/alpine-glibc
 
-MAINTAINER Dane Everitt <dane+docker@daneeveritt.com>
+MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
 
 RUN apk update \
     && apk upgrade \
     && apk add --update curl ca-certificates openssl perl \
-    && adduser -D -h /home/container container
+    && adduser -D -h /home/container container \
+	&& apt-get install -y \
+ lib32stdc++6 \
+ wget \
+ psmisc
+
 
 USER container
 ENV USER container
 ENV HOME /home/container
-ENV TS_VERSION 3.0.13.4
+ENV SAMP_VERSION 0.3.7
 
 WORKDIR /home/container
 

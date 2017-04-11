@@ -1,49 +1,45 @@
 sleep 3
 
-CHK_FILE="/home/container/ts3server_minimal_runscript.sh"
+CHK_FILE="/home/container/samp03svr"
 if [ -f $CHK_FILE ]; then
-    echo "Teamspeak executable exists, not downloading. To update, delete ts3server_minimal_runscript.sh."
+    echo "Executable of SAMP exists, not downloading. To update, delete samp03svr."
 else
     mkdir -p /home/container/.tmp-build
     cd /home/container/.tmp-build
 
-    echo "> curl -sSLO http://dl.4players.de/ts/releases/${TS_VERSION}/teamspeak3-server_linux_amd64-${TS_VERSION}.tar.bz2"
-    curl -sSLO http://dl.4players.de/ts/releases/${TS_VERSION}/teamspeak3-server_linux_amd64-${TS_VERSION}.tar.bz2
+    echo "> curl -sSLO http://files.sa-mp.com/samp037svr_R2-1.tar.gz"
+    curl -sSLO http://files.sa-mp.com/samp037svr_R2-1.tar.gz
 
-    echo "> tar -xjvf teamspeak3-server_linux_amd64-${TS_VERSION}.tar.bz2"
-    tar -xjvf teamspeak3-server_linux_amd64-${TS_VERSION}.tar.bz2
+    echo "> tar -xjvf samp037svr_R2-1.tar.gz"
+    tar -xjvf samp037svr_R2-1.tar.gz
 
-    cp -rl teamspeak3-server_linux_amd64/* /home/container/.
+    cp -rl samp03/* /home/container/.
     rm -r /home/container/.tmp-build
 
     cd /home/container
 fi
 
-if [ -f "/home/container/ts3server.ini" ]; then
-    echo "ts3server.ini exists, not generating file."
+if [ -f "/home/container/server.cfg" ]; then
+    echo "server.cfg exists, not generating file."
 else
-    echo "machine_id=
-default_voice_port=${SERVER_PORT}
-voice_ip=0.0.0.0
-licensepath=
-filetransfer_port=30033
-filetransfer_ip=
-query_port=${SERVER_PORT}
-query_ip=0.0.0.0
-query_ip_whitelist=query_ip_whitelist.txt
-query_ip_blacklist=query_ip_blacklist.txt
-dbplugin=ts3db_sqlite3
-dbpluginparameter=
-dbsqlpath=sql/
-dbsqlcreatepath=create_sqlite/
-dbconnections=10
-logpath=logs
-logquerycommands=0
-dbclientkeepdays=30
-logappend=0
-query_skipbruteforcecheck=0" > ts3server.ini
+    echo "lanmode 0
+rcon_password changeme
+maxplayers 50
+port ${SERVER_PORT}
+hostname SA-MP 0.3 Server
+gamemode0 grandlarc 1
+filterscripts base gl_actions gl_property gl_realtime
+announce 0
+query 1
+weburl www.sa-mp.com
+maxnpc 0
+onfoot_rate 40
+incar_rate 40
+weapon_rate 40
+stream_distance 300.0
+stream_rate 1000" > ts3server.ini
 fi
 
 cd /home/container
 MODIFIED_STARTUP=`echo ${STARTUP} | perl -pe 's@\{\{(.*?)\}\}@$ENV{$1}@g'`
-./ts3server_minimal_runscript.sh ${MODIFIED_STARTUP}
+./samp03svr
