@@ -11,7 +11,6 @@ RUN apk update \
  wget \
  psmisc \
     && apk update \
-    && apk get \
     && apk upgrade \
     && adduser -D -h /home/container container
 
