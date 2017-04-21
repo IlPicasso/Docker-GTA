@@ -14,9 +14,13 @@ else
     tar -zxf samp037svr_R2-1.tar.gz
 
     cp -r samp03/* /home/container/
+    echo "Copiado samp03 SI"
     rm -r /home/container/.tmp-build
+    echo "Removido .tmpbuild SI"
     cd /home/container
+    echo "cd home container SI"
     chmod 700 *
+    echo "CHMOD 700 TODO SI"
 fi
 
 if [ -f "/home/container/server.cfg" ]; then
@@ -40,6 +44,8 @@ stream_distance 300.0
 stream_rate 1000" > server.cfg
 fi
 
+    echo "DE NUEVO IR A HOME CONTAINER"
 cd /home/container
 MODIFIED_STARTUP=`echo ${STARTUP} | perl -pe 's@\{\{(.*?)\}\}@$ENV{$1}@g'`
+        echo "EMEPZANDO SERVIDOR"
 ./samp03svr
