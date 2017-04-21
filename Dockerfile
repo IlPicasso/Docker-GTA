@@ -17,11 +17,11 @@ MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
 
  RUN apt-get update && apt-get install -y wget psmisc curl openssl ca-certificates perl libtbb-dev \
  && apt-get update \
- && dpkg --add-architecture i386 \
+ #&& dpkg --add-architecture i386 \
  && apt-get update \
- && apt-get install -y libstdc++6:i386 libgcc1:i386 zlib1g:i386 libncurses5:i386 \
+ && apt-get install -y libstdc++6 libgcc1 zlib1g libncurses5 \
  && apt-get update \
- && apt-get install -y lib32stdc++6 libtbb2 lib32ncurses5 lib32z1 ia32-libs \
+# && apt-get install -y lib32stdc++6 libtbb2 lib32ncurses5 lib32z1 ia32-libs \
  && adduser -D -h /home/container container
 
 USER container
