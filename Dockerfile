@@ -1,21 +1,21 @@
 # Dockerfile for SAMP on Pterodactyl Panel
+#    && apt-add-architecture i386 \
 FROM frolvlad/alpine-glibc
 
 MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
 
-RUN apt-get update \
-    && apt-get upgrade -y \
-    && apt-get install -y curl ca-certificates openssl perl \
-    && apt-get install -y \
+RUN apk update \
+    && apk upgrade \
+    && apk add curl ca-certificates openssl perl \
+    && apk add \
  lib32stdc++6 \
  libstdc++6 \
  wget \
  psmisc \
-    && apt-get update \
-    && apt-add-architecture i386 \
-    && apt-get install -y \
+    && apk update \
+    && apk get \
  lib32stdc++6 \
-    && apt-get upgrade -y \
+    && apk upgrade \
     && adduser -D -h /home/container container
 
 
