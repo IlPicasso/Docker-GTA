@@ -27,4 +27,4 @@ WORKDIR /home/container
 
 COPY ./start.sh /start.sh
 
-CMD ["/bin/ash", "/start.sh"]
+CMD ["/bin/bash", "/start.sh"]
