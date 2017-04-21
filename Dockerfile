@@ -8,7 +8,7 @@ RUN apk update \
     && apk upgrade \
     && apk add curl ca-certificates openssl perl \
     && apk add \
- libstdc++6:i386 \
+ libstdc++5 \
  wget \
  psmisc \
     && apk update \
