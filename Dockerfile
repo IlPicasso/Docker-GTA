@@ -1,7 +1,7 @@
 # Dockerfile for SAMP on Pterodactyl Panel
 #    && apt-add-architecture i386 \
 #FROM frolvlad/alpine-glibc
-FROM debian:jessie
+FROM ubuntu:16.04
 
 MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
 
