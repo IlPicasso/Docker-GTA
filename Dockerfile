@@ -9,12 +9,10 @@ RUN apk update \
     && apk add curl ca-certificates openssl perl \
     && apk add \
  lib32stdc++6 \
- libstdc++6 \
  wget \
  psmisc \
     && apk update \
     && apk get \
- lib32-libstdc++5 \
     && apk upgrade \
     && adduser -D -h /home/container container
 
