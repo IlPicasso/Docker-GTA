@@ -8,7 +8,6 @@ RUN apk update \
     && apk upgrade \
     && apk add curl ca-certificates openssl perl \
     && apk add \
- libstdc++5 \
  wget \
  psmisc \
     && apk update \
