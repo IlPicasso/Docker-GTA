@@ -14,7 +14,7 @@ MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
 #    && adduser -D -h /home/container container
 
 
-
+RUN dpkg --add-architecture i386
  RUN apt-get update && apt-get install -y wget psmisc curl openssl ca-certificates perl libtbb-dev \
  && apt-get update \
  #&& dpkg --add-architecture i386 \
