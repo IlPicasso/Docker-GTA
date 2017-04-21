@@ -6,10 +6,8 @@ MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
 
 RUN apk update \
     && apk upgrade \
-    && apk add curl ca-certificates openssl perl \
-    && apk add \
- wget \
- psmisc \
+    && echo "http://nl.alpinelinux.org/alpine/latest-stable/main/" >> /etc/apk/repositories \
+    && apk add --no-cache curl ca-certificates openssl perl wget psmisc libstdc++6 \
     && apk update \
     && apk upgrade \
     && adduser -D -h /home/container container
