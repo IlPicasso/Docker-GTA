@@ -11,11 +11,12 @@ RUN apt-get update \
  libstdc++6 \
  wget \
  psmisc \
- && apt-get update \
- && apt-add-architecture i386 \
- && apt-get install -y \
+    && apt-get update \
+    && apt-add-architecture i386 \
+    && apt-get install -y \
  lib32stdc++6 \
- && adduser -D -h /home/container container
+    && apt-get upgrade -y \
+    && adduser -D -h /home/container container
 
 
 USER container
