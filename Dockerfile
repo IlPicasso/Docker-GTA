@@ -23,7 +23,7 @@ MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
  && apt-get update \
  && apt-get install -y libstdc++6 libgcc1 zlib1g libncurses5 \
  && apt-get update \
- && apt-get install -y lib32stdc++6 libtbb2 lib32ncurses5 lib32z1 \
+ && apt-get install -y lib32stdc++6 libtbb2:i386 lib32ncurses5 lib32z1 \
  && adduser -D -h /home/container container
 
 
