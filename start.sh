@@ -11,7 +11,7 @@ else
     curl -sSLO http://files.sa-mp.com/samp037svr_R2-1.tar.gz
 
     echo "> tar -xjvf samp037svr_R2-1.tar.gz"
-    tar -xjvf samp037svr_R2-1.tar.gz
+    tar -zxf samp037svr_R2-1.tar.gz
 
     cp -r samp03/* /home/container/
     rm -r /home/container/.tmp-build
