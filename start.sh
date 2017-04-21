@@ -15,8 +15,8 @@ else
 
     cp -r samp03/* /home/container/
     rm -r /home/container/.tmp-build
-
     cd /home/container
+    chmod 0777 samp03svr
 fi
 
 if [ -f "/home/container/server.cfg" ]; then
