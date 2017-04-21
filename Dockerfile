@@ -14,7 +14,7 @@ RUN apk update \
  psmisc \
     && apk update \
     && apk get \
- lib32stdc++6 \
+ lib32-libstdc++5 \
     && apk upgrade \
     && adduser -D -h /home/container container
 
