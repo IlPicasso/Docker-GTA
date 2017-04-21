@@ -1,4 +1,3 @@
-#!/bin/bash
 sleep 3
 
 CHK_FILE="/home/container/samp03svr"
