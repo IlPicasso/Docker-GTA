@@ -2,7 +2,7 @@ sleep 3
 
 CHK_FILE="/home/container/samp03svr"
 if [ -f $CHK_FILE ]; then
-    echo "Executable of SAMP exists, not downloading. To update, delete samp03svr."
+    echo "Executable of SAMP exists, not downloading. To update, delezte samp03svr."
 else
     mkdir -p /home/container/.tmp-build
     cd /home/container/.tmp-build
@@ -13,7 +13,7 @@ else
     echo "> tar -xjvf samp037svr_R2-1.tar.gz"
     tar -xjvf samp037svr_R2-1.tar.gz
 
-    cp -rl samp03/* /home/container/.
+    cp -r samp03/* /home/container/
     rm -r /home/container/.tmp-build
 
     cd /home/container
@@ -37,7 +37,7 @@ onfoot_rate 40
 incar_rate 40
 weapon_rate 40
 stream_distance 300.0
-stream_rate 1000" > ts3server.ini
+stream_rate 1000" > server.cfg
 fi
 
 cd /home/container
