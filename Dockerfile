@@ -15,7 +15,7 @@ MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
 
 
 
-RUN apt-get update && apt-get install -y libstdc++3 wget psmisc curl openssl ca-certificates perl libtbb-dev \
+RUN apt-get update && apt-get install -y wget psmisc curl openssl ca-certificates perl libtbb-dev \
  && apt-get update \
  && apt-add-architecture i386 \
  && apt-get install -y lib32stdc++6 \
