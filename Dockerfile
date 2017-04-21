@@ -16,10 +16,7 @@ MAINTAINER Stefano Ortiz <staff+staff@comugamers.com>
 RUN dpkg --add-architecture i386
 
 
-RUN apt-get update && apt-get install -y \
- lib32stdc++6 \
- wget \
- psmisc \
+RUN apt-get update && apt-get install -y lib32stdc++6 wget psmisc curl openssl ca-certificates perl \
  && adduser -D -h /home/container container
 
 USER container
